@@ -18,7 +18,6 @@ pasmo cls.z80 CLS.COM
 
 z80asm cls
 
-
 You may have to translate the line endings of the source depending on which operating system you use. A minor
 pain in the arse.
 
