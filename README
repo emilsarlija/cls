@@ -1,0 +1,44 @@
+CLS - VT100 CLEAR SCREEN FOR CP/M
+
+This does exactly what it says - it's a CP/M program to clear the screen using the VT100 escape code to do so.
+Won't work for other terminal types but I may write other versions of this in the future to support them.
+
+This program was infuenced by cls-cpm by Xander Soldaat, found at this link:
+
+https://github.com/botbench/cls-cpm
+
+His implementation is in C, mine is in Z80 assembly language but will also run on an 8080.
+Both programs do exactly the same thing - run it and the screen is cleared, trivial but useful.
+
+I have assembled this using the Pasmo Z80 cross-assembler under Linux like so:
+
+pasmo cls.z80 CLS.COM
+
+...and also using Z80ASM by SLR Systems under CP/M 2.2 on my Cromemco Z-1 computer like so:
+
+z80asm cls
+
+
+You may have to translate the line endings of the source depending on which operating system you use. A minor
+pain in the arse.
+
+**** FILES ****
+
+cls.z80 - the Z80 assembly language source, if you want to assemble it yourself
+CLS.COM - the CP/M binary if you can't be bothered assembling it
+README - this file you're reading
+
+**** SOFTWARE LICENCE ****
+
+You're kidding, right? This is a trivial program that took a few minutes to whip up. It's taken me more time to
+write this README file and upload it to GitHub than it did to create the actual program itself.
+
+You're expecting a licence?! No, there is no licence!
+
+Consider this source and resulting binary public domain. Anybody with basic Z80 programming skills who skimmed
+through the first few chapters of an old CP/M programming book could've written this. Funnily enough, that is
+exactly how this came about. I'm not even putting my name in the source. Do what ever you want with it. You
+can even pretend you wrote it.
+
+This document, on the other hand, took real effort and is therefore copyrighted by the conceited bastard that
+wrote it - (C) 2022 Emil Sarlija, emil@chookfest.net
