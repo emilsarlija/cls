@@ -1,4 +1,4 @@
-;CLS - VT100 CLEAR SCREEN FOR CP/M
+;CLS - CLEAR SCREEN FOR CP/M
 ;RELEASED IN THE PUBLIC DOMAIN AS
 ;ANYONE COULD HAVE WRITTEN THIS
 
@@ -8,13 +8,20 @@ PRTSTR:	EQU	9
 
 	ORG 100H
 
-START:	LD C, PRTSTR	;Print VT100 escape code
+START:	LD C, PRTSTR	;Print terminal escape code
 	LD DE, CLS	;to clear the screen
 	CALL BDOS
 
 EXIT:	LD C, WARMBT	;Exit to CP/M
 	CALL BDOS
 
-CLS:	DB	1BH, "[2J", 1BH, "[H$"
+;*************************************************
+;UNCOMMENT THE LINE BELOW THAT SUITS YOUR TERMINAL
+;*************************************************
+
+CLS:	DB	1BH, "[2J", 1BH, "[H$"	;VT100/ANSI
+;CLS:	DB	1BH, 'H', 1BH, "J$"	;VT52
+;CLS:	DB	1AH, '$'		;ADM3A/ADM31/KAYPRO/C128
+;CLS:	DB	0CH, '$'		;DG DASHER
 
 	END
